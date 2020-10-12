@@ -1,8 +1,8 @@
 import os
 import json
 from azure.identity import DefaultAzureCredential
+from azure.identity import ClientSecretCredential
 from  azure.mgmt.resource import ResourceManagementClient
-from azure.common.credentials import ServicePrincipalCredentials
 
 def get_credential_using_different_approach():
     """
@@ -12,10 +12,10 @@ def get_credential_using_different_approach():
     with open('D:\\temp\\test.json') as cred_file:
         contnets = cred_file.read()
         credential_json = json.loads(contnets)
-        credential = ServicePrincipalCredentials(
-            tenant=os.environ['AZURE_TENANT_ID'],
-            client_id=os.environ['AZURE_CLIENT_ID'],
-            secret=os.environ['AZURE_CLIENT_SECRET'])
+        credential = ClientSecretCredential(
+            tenant_id=credential_json['tenantId'],
+            client_id=credential_json['clientId'],
+            client_secret=credential_json['clientSecret'])
         return credential
 
     
