@@ -17,10 +17,10 @@
       "name": "$return"
     },
     {
-      "type": "blob",
+      "type": "table",
       "direction": "out",
-      "name": "outputBlob",
-      "path": "outcontainer/{rand-guid}",
+      "name": "employeeTable",
+      "tableName": "employeeTable",
       "connection": "qtstoragefordemolt_STORAGE"
     }
   ]
