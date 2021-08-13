@@ -1,0 +1,20 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "myblob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "uploadedimages/{name}.{extension}",
+      "connection": "qtexpermiment_STORAGE"
+    },
+    {
+      "name": "outputblob",
+      "type": "blob",
+      "path": "copiedimages/{name}.{extension}",
+      "connection": "qtexpermiment_STORAGE",
+      "direction": "out"
+
+    }
+  ]
+}
