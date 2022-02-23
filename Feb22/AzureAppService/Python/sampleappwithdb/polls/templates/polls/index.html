@@ -1,0 +1,14 @@
+<h1> Polls application </h1>
+<h2>Created in Azure Class</h2>
+
+{% if latest_questions_list %}
+    <ul>
+        {% for question in latest_questions_list %}
+        <li>
+            {{question.question_text}}
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+  <p>No polls are avaliable</p>
+{% endif %}

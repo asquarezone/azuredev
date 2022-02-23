@@ -1,4 +1,3 @@
-import imp
 from statistics import mode
 from django.db import models
 from django.utils import timezone
